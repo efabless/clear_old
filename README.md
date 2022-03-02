@@ -1,7 +1,8 @@
 # Caravel-OpenFPGA-EF
 
-The repo contains the FPGA layout integration with the [Caravel](https://github.com/efabless/caravel.git) chip.
-Thee layout is an 8x8 FPGA fabric generated using [OpenFPGA](https://github.com/lnis-uofu/OpenFPGA) and hardened using [OpenLANE](https://github.com/efabless/openlane). 
+The repo contains the FPGA layout integration with the [Caravel](https://github.com/efabless/caravel.git) chip. The content of the repo represemt the first generation version of CLEAR delivered by [@Manarabdelaty](https://github.com/Manarabdelaty/Caravel-OpenFPGA-EF)
+
+The layout is an 8x8 FPGA fabric generated using [OpenFPGA](https://github.com/lnis-uofu/OpenFPGA) and hardened using [OpenLane](https://github.com/efabless/openlane).  
 
 # Caravel Integration
 
