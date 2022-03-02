@@ -1,0 +1,18 @@
+--- 
+project: 
+  description: "8x8 FPGA designed using OpenFPGA and hardened using OpenLANE."
+  foundry: "SkyWater"
+  git_url: "https://github.com/Manarabdelaty/Caravel-OpenFPGA-EF"
+  organization: "Efabless"
+  organization_url: "http://efabless.com"
+  owner: "Efabless"
+  process: "SKY130"
+  project_name: "Caravel-OpenFPGA-EF"
+  tags: 
+    - "Open MPW"
+    - "Test Harness"
+  category: "Test Harness"
+  top_level_netlist: "verilog/gl/caravel.v"
+  user_level_netlist: "verilog/gl/user_project_wrapper.v"
+  version: "1.00"
+  cover_image: "doc/images/Caravel-FPGA.png"
