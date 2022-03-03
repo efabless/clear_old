@@ -1,4 +1,4 @@
-# Caravel-OpenFPGA-EF
+# CLEAR
 
 The repo contains the FPGA layout integration with the [Caravel](https://github.com/efabless/caravel.git) chip. The content of the repo represemt the first generation version of CLEAR delivered by [@Manarabdelaty](https://github.com/Manarabdelaty/Caravel-OpenFPGA-EF)
 
