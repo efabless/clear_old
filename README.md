@@ -1,3 +1,8 @@
+# Acknowledgement
+
+The repo contains the FPGA layout integration with the [Caravel](https://github.com/efabless/caravel.git) chip. The content of the repo represents the first generation version of CLEAR delivered by [@Manarabdelaty](https://github.com/Manarabdelaty/Caravel-OpenFPGA-EF) of [efabless](https://efabless.com)
+
+
 **CLEAR** \- The Open Source FPGA ASIC   
 ============================================================================================================================
 
@@ -74,10 +79,6 @@ Additional Cool Stuff
 
 If the April shuttle does not go out, then the June chipIgnite shuttle will be used which extends delivery to November.
 
-
-# CLEAR
-
-The repo contains the FPGA layout integration with the [Caravel](https://github.com/efabless/caravel.git) chip. The content of the repo represemt the first generation version of CLEAR delivered by [@Manarabdelaty](https://github.com/Manarabdelaty/Caravel-OpenFPGA-EF)
 
 The layout is an 8x8 FPGA fabric generated using [OpenFPGA](https://github.com/lnis-uofu/OpenFPGA) and hardened using [OpenLane](https://github.com/efabless/openlane).  
 
