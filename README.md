@@ -72,17 +72,7 @@ Additional Cool Stuff
 
 [![](https://groupgets-files.s3.amazonaws.com/Efabless/chipIgnite.png)](https://efabless.com/chipignite/2204C)
 
-#### **Contact for bulk order inquiries over the 300 unit limit: [contact@groupgets.com](mailto:contact@groupgets.com)**
-
-### **Disclaimer: Lead Time is subject to change**
-
-Delivery depends on the launch of the April chipIgnite shuttle (2204C) which needs a minimum number of projects.  With this shuttle, the delivery is planned for September.  
-
 If the April shuttle does not go out, then the June chipIgnite shuttle will be used which extends delivery to November.
-
-### Why GroupGets?
-
-We would like to do something new and create an open source FPGA chip along with its carrier board and software tools. By using the GroupGets crowd purchasing platform, passionate software developers, embedded hardware developers, chip designers and makers can get this awesome and first-of-its-kind open source eFPGA. We would also like to show that the community can self-launch similar GroupGets campaigns using open source design tools to design an open source chip, to make an open source board, to build their open source smart device or product, and present it in the marketplace to gauge potential market interest.
 
 
 # CLEAR
