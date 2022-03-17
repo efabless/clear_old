@@ -14,15 +14,17 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FIRMWARE_PATH = ../..
+FIRMWARE_PATH = ..
 VERILOG_PATH = ../../../..
 RTL_PATH = $(VERILOG_PATH)/rtl
 IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
-GCC_PATH?=/ef/apps/bin
-GCC_PREFIX?=riscv32-unknown-elf
-PDK_PATH?=/ef/tech/SW/sky130A
+PDK_ROOT=/Volumes/Efabless/pdk
+GCC_PATH?=/usr/local/bin
+#GCC_PREFIX?=riscv32-unknown-elf
+GCC_PREFIX?=riscv64-unknown-elf
+PDK_PATH?=$(PDK_ROOT)/sky130A
 
 USER_PROJ_RTL= $(RTL_PATH)/user_project/SRC
 
@@ -30,7 +32,7 @@ SIM?=RTL
 
 .SUFFIXES:
 
-PATTERN = io_ports
+PATTERN = ccff_test
 
 all:  ${PATTERN:=.vcd}
 
@@ -56,10 +58,16 @@ endif
 %.hex: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
-	sed -ie 's/@10000000/@00000000/g' $@
+	sed -i '.orig' -e 's/@1000/@0000/g' $@
 
 %.bin: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
+
+flash: ccff_test.hex
+	python3 ../util/caravel_hkflash.py $<
+
+stop:
+	python3 ../util/caravel_hkstop.py $<
 
 # ---- Clean ----
 
