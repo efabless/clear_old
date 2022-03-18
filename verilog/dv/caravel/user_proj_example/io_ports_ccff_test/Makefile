@@ -18,11 +18,16 @@ FIRMWARE_PATH = ../..
 VERILOG_PATH = ../../../..
 RTL_PATH = $(VERILOG_PATH)/rtl
 IP_PATH = ../../../../ip
-BEHAVIOURAL_MODELS = ../../ 
+BEHAVIOURAL_MODELS = ../../
 
-GCC_PATH?=/ef/apps/bin
-GCC_PREFIX?=riscv32-unknown-elf
-PDK_PATH?=/ef/tech/SW/sky130A
+#GCC_PATH?=/ef/apps/bin
+#GCC_PREFIX?=riscv32-unknown-elf
+#PDK_PATH?=/ef/tech/SW/sky130A
+
+GCC_PATH?=/usr/local/bin
+GCC_PREFIX?=riscv64-unknown-elf
+PDK_ROOT=/Volumes/Efabless/pdk
+PDK_PATH?=$(PDK_ROOT)/sky130A
 
 USER_PROJ_RTL= $(RTL_PATH)/user_project/SRC
 
@@ -40,7 +45,7 @@ hex:  ${PATTERN:=.hex}
 ifeq ($(SIM),RTL)
 	iverilog -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) -I $(USER_PROJ_RTL) \
-	$< -o $@
+	-o $@ $<
 else
 	iverilog -DFUNCTIONAL -DSIM -DGL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
@@ -56,7 +61,7 @@ endif
 %.hex: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
-	sed -ie 's/@10000000/@00000000/g' $@
+	sed -ie 's/@1000/@0000/g' $@
 
 %.bin: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@

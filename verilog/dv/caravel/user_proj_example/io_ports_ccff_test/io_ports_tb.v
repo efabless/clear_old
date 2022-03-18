@@ -78,6 +78,7 @@ module io_ports;
     begin
       config_done = 1'b0;
       soc_setup_done = 1'b0;
+      $display("Starting simulation...");
     end
 
   // ----- Begin raw programming clock signal generation -----
@@ -124,7 +125,8 @@ module io_ports;
   assign prog_clk[0] = prog_clock[0];
   assign pReset[0] = ~prog_reset[0];
   assign Reset[0] = ~greset[0];
-  assign Test_en[0] = prog_clock ;  //1'b1;
+//  assign Test_en[0] = prog_clock ;  //1'b1;
+  assign Test_en[0] = 1'b1;
   assign sc_head[0] = 1'b0;
   assign IO_ISOL_N[0] = ~greset;
   // ----- End connecting global ports of FPGA fabric to stimuli -----
@@ -169,13 +171,13 @@ module io_ports;
            // So it should be at logic '1' and then pulled down to logic '0'
            if (0 == num_checked_points) begin
              if (ccff_tail !== 1'b1) begin
-               $display("Error: ccff_tail = %b", sc_tail);
+               $display("Error: ccff_tail = %b", ccff_tail);
                num_errors = num_errors + 1;
              end
            end
            if (1 <= num_checked_points) begin
              if (ccff_tail !== 1'b0) begin
-               $display("Error: ccff_tail = %b", sc_tail);
+               $display("Error: ccff_tail = %b", ccff_tail);
                num_errors = num_errors + 1;
              end
            end

@@ -62,6 +62,8 @@
 #define PROG_RESET_HIGH   reg_mprj_datal |= 1UL << PIN_PROG_RESET
 #define CCFF_HEAD_LOW     reg_mprj_datal &= ~( 1UL << PIN_CCFF_HEAD )
 #define CCFF_HEAD_HIGH    reg_mprj_datal |= 1UL << PIN_CCFF_HEAD
+#define TEST_EN_LOW       reg_mprj_datah &= ~( 1UL << PIN_TEST_EN )
+#define TEST_EN_HIGH      reg_mprj_datah |= 1UL << PIN_TEST_EN
 
 void blink(int count) {
 	// Enable GPIO (all output, ena = 0)
